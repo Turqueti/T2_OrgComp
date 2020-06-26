@@ -39,66 +39,75 @@ var Quiz = [
 
 ];
 
-var currentquestion = 0, score = 0, submt=true, picked;
+let currentquestion = 0, score = 0;
 
-init(QuizTitle,Quiz);
+QuestionHandler(currentquestion,Quiz);
 
-function init(QuizTitle,Quiz) {
-    var Frame = document.querySelector("#Frame");
-    appendTitle(QuizTitle,Frame);
-    
-    var pager = document.createElement('p');
-    pager.classList.add('pager');
-    pager.setAttribute('id','pager');
-    pager.textContent = 'questão 1 de ' + Quiz.length;
-    Frame.appendChild(pager);
+function QuestionHandler(currentquestion,Quiz) {
+    SetDOM(currentquestion,Quiz.length);
+    selectOption();
 
-    var question = document.createElement('h3');
-    question.classList.add('question');
-    question.setAttribute('id','question');
-    question.textContent = Quiz[0]['question'];
-    Frame.appendChild(question);
+    let submtbtn = document.querySelector('#submitbutton');
+    submtbtn.addEventListener('click',function(){
 
-    if (Quiz[0].hasOwnProperty('image') && Quiz[0]['image'] != "") {
-        var image = document.createElement('img');
-        image.classList.add('question-image');
-        image.setAttribute('id','question-image');
-        image.setAttribute('src',Quiz[0]['image']);
-        image.setAttribute('alt',Quiz[0]['image']);        
-        Frame.appendChild(image);
-    }
+        if (this.classList.contains('Next-Question')) {
+            clearDom();
+            submtbtn.classList.remove('Next-Question');
+            QuestionHandler(currentquestion+1,Quiz);
 
-    var explanation = criaElementoFacilitador('p','explanation','explanation');
-    Frame.appendChild(explanation);
+        }else{
+            CheckAwnser(Quiz,currentquestion);
+            submtbtn.textContent = 'próxima pergunta';
+            submtbtn.classList.add('Next-Question');
+        }
+        
 
-    var choiceBlock = criaElementoFacilitador('ul','choice-block','choice-block')
-    Frame.appendChild(choiceBlock);
-    addChoices(Quiz[0]['choices']);
 
-    var submitBtn = criaElementoFacilitador('div','choice-box','submitbutton');
-    submitBtn.textContent = '- CHECA RESPOSTA -';
-    Frame.appendChild(submitBtn);    
+    });
 
-    setupButons();
 }
 
-function addChoices(choices) {
-    if (choices != undefined) {
-        var choiceBlock = document.querySelector('#choice-block');
-        choiceBlock.innerHTML = '';
+function clearDom() {
+    let Frame = document.querySelector("#Frame");
+    Frame.innerHTML = '';
+}
 
-        for (let i = 0; i < choices.length; i++) {
-            var btntemp = criaElementoFacilitador('li',"choice-box",'btn'+i);
-            btntemp.classList.add('btn');
-            btntemp.classList.add('choice');
-            btntemp.setAttribute('data-index',i);
-            btntemp.textContent = choices[i];
-            choiceBlock.appendChild(btntemp);
+function CheckAwnser(Quiz,currentquestion) {
+    let opt = document.querySelector(".selected");
+    console.log(opt);
+    let chosen = opt.getAttribute('data-index');
+    let explicacao = document.querySelector('#explanation');
 
-            
-        }
+    
+    explicacao.style.display='block';
+
+    if (Quiz[currentquestion]['choices'][chosen] == Quiz[currentquestion]['correct']) {
+        opt.classList.add('correct');
+        explicacao.innerHTML='<span class="correct">CORRECT!</span> ' + Quiz[currentquestion]['explanation'];
+        score++;
+    }else{
+        opt.classList.add('incorrect');
+        explicacao.innerHTML='<span class="incorrect">INCORRECT!</span> ' + Quiz[currentquestion]['explanation'];
     }
     
+}
+
+function SetDOM(currentquestion,QuizLength) {
+    let Frame = document.querySelector("#Frame");
+    appendTitle(QuizTitle,Frame);
+    
+    let pager = atualizaPagerDOM(currentquestion,QuizLength);
+    Frame.appendChild(pager);
+
+    let questionJson = Quiz[currentquestion];
+    let question = new Question(questionJson['question'],questionJson['choices'],questionJson['image'],questionJson['correct'],questionJson['explanation']);
+
+    let questionDOM = question.createDOMelement();
+    Frame.appendChild(questionDOM);
+
+    let submitBtn = criaElementoFacilitador('div','choice-box','submitbutton');
+    submitBtn.textContent = '- CHECA RESPOSTA -';
+    Frame.appendChild(submitBtn);
 }
 
 function criaElementoFacilitador(tipo,classe,id) {
@@ -121,79 +130,23 @@ function appendTitle(QuizTitle,Frame) {
 
 }
 
-function setupButons(){
-    var btns = document.querySelectorAll('.choice');
+function selectOption(){
+    let btns = document.querySelectorAll('.choice');
     for (btn of btns) {
         btn.addEventListener('click',function(){
-            picked = this.getAttribute('data-index');
-            
-            //tira o css de todos os elementos
-            btns.forEach(function(element){element.style.cssText = ''});
-            //coloca uma borda verde no selecionado
-            this.style.cssText = "font-weight:bold; border-color:#51a351; color:#51a351";
-
+            //tira a classe selected de todos os elementos
+            btns.forEach(function(element){element.classList.remove('selected')});
+            //coloca a classe selected no selecionado
+            this.classList.add('selected');
         })
 
     }
-    var submtbtn = document.querySelector('#submitbutton');
-    submtbtn.addEventListener('click',function(){
-        processQuestion(picked);
-    });
-    
-    
-   
 }
 
-function processQuestion(choice) {
-    var respUser = Quiz[currentquestion]['choices'][choice];
-    var respCerta = Quiz[currentquestion]['correct'];
-
-    var explicacao = document.querySelector('#explanation');
-    var btnescolhido = document.querySelector('#btn'+choice);
-    // console.log(btnescolido);
-
-    if (respUser == respCerta) {
-        btnescolhido.classList.add('btn-success');
-        btnescolhido.style.cssText = "font-weight:bold; border-color:#51a351; color:#fff";
-        explicacao.style.display='block';
-        explicacao.innerHTML='<span class="correct">CORRECT!</span> ' + Quiz[currentquestion]['explanation'];
-        score++;
-    }else{
-        btnescolhido.classList.add('btn-danger');
-        btnescolhido.style.cssText="font-weight:bold; border-color:red; color:#fff";
-        
-        explicacao.style.display='block';
-        explicacao.innerHTML='<span class="incorrect">INCORRECT!</span> ' + Quiz[currentquestion]['explanation'];
-    }
-    
-
-    if (currentquestion < Quiz.length) {
-        var submtbtn = document.querySelector('#submitbutton');
-        submtbtn.textContent = "PRÓXIMA PERGUNTA";
-        submtbtn.addEventListener('click',function(){
-            currentquestion++;
-            explicacao.style.display='none';
-            nextQuestion();
-        });
-
-    }
-}
-
-function nextQuestion() {
-    var question = document.querySelector("#question");
-    var pager = document.querySelector("#pager");
-
-    question.textContent =  Quiz[currentquestion]['question'];
-
-    atualizaPager(pager);
-    atualizImagem();
-    addChoices(Quiz[currentquestion]['choices']);
-    setupButons();
-
-}
-
-function atualizaPager(Pager) {
-    pager.textContent = 'Question ' + currentquestion + ' of ' + Quiz.length;
+function atualizaPagerDOM(currentquestion,QuizLength) {
+    let pager = document.createElement('p');
+    pager.textContent = 'Questão ' + (currentquestion + 1) + ' de ' + QuizLength;
+    return pager;
 }
 
 function atualizImagem() {

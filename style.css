@@ -35,3 +35,9 @@ img.question-image 										{ width:100%; height:auto; display:block; max-width
 .choice-box 											{ width:100%;  display:block;  text-align:center;  margin:5px auto !important; padding:10px 0 !important; border:1px solid #bdbdbd; }
 .correct 												{ color:#51a351; font-size: 20px; display: block; margin-bottom: 5px; border-bottom: 1px #51a351 solid; padding-bottom: 5px; }
 .incorrect 												{ color:#f93939; font-size: 20px; display: block; margin-bottom: 5px; border-bottom: 1px #f93939 solid; padding-bottom: 5px; }
+
+.selected {
+    font-weight:bold;
+    border-color:#51a351;
+    color:#51a351
+}
