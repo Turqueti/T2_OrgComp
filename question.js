@@ -75,6 +75,9 @@ class Question{
         let choiceBlock = this.createElementHelper('ul','choice-block','choice-block');
         for (let i = 0; i < this.choices.length; i++) {
             let choice = this.createElementHelper('li',"choice-box",'btn'+i);
+            if (this.correct == this.choices[i]) {
+                choice.classList.add('X');
+            }
             choice.classList.add('choice');
             choice.setAttribute('data-index',i);
             choice.textContent = this.choices[i];

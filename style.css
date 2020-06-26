@@ -41,3 +41,11 @@ img.question-image 										{ width:100%; height:auto; display:block; max-width
     border-color:#51a351;
     color:#51a351
 }
+
+.acertos{
+    font-weight:normal;
+    margin:20px 0;
+    padding:0;
+    font-style:italic;
+    display:block;
+}

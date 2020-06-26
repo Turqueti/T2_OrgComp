@@ -39,9 +39,29 @@ var Quiz = [
 
 ];
 
-let currentquestion = 0, score = 0;
+let currentquestion = 0;
+var score = 0;
 
-QuestionHandler(currentquestion,Quiz);
+
+
+
+QuizHandler();
+
+
+function QuizHandler(){
+    
+    console.log(score);
+
+    if (currentquestion < Quiz.length) {
+        
+        QuestionHandler(currentquestion,Quiz);
+        currentquestion++;
+        
+    }else{
+        FinishQuizSetFinishDOM();
+    }
+}
+
 
 function QuestionHandler(currentquestion,Quiz) {
     SetDOM(currentquestion,Quiz.length);
@@ -52,8 +72,11 @@ function QuestionHandler(currentquestion,Quiz) {
 
         if (this.classList.contains('Next-Question')) {
             clearDom();
+            QuizHandler(); 
+            // QuestionHandler(currentquestion+1,Quiz);
             submtbtn.classList.remove('Next-Question');
-            QuestionHandler(currentquestion+1,Quiz);
+            
+            
 
         }else{
             CheckAwnser(Quiz,currentquestion);
@@ -74,7 +97,7 @@ function clearDom() {
 
 function CheckAwnser(Quiz,currentquestion) {
     let opt = document.querySelector(".selected");
-    console.log(opt);
+    let correct = document.querySelector(".X");
     let chosen = opt.getAttribute('data-index');
     let explicacao = document.querySelector('#explanation');
 
@@ -86,7 +109,9 @@ function CheckAwnser(Quiz,currentquestion) {
         explicacao.innerHTML='<span class="correct">CORRECT!</span> ' + Quiz[currentquestion]['explanation'];
         score++;
     }else{
+        opt.classList.remove('selected');
         opt.classList.add('incorrect');
+        correct.classList.add('correct');
         explicacao.innerHTML='<span class="incorrect">INCORRECT!</span> ' + Quiz[currentquestion]['explanation'];
     }
     
@@ -160,4 +185,23 @@ function atualizImagem() {
     }else{
         Imagem.style.display = 'none';
     }
+}
+
+function FinishQuizSetFinishDOM(){
+    let Frame = document.querySelector("#Frame");
+
+
+    let divFim = criaElementoFacilitador('div','div-Fim','div-Fim');
+
+    let scorediv = criaElementoFacilitador('h3','Score','Score');
+    scorediv.classList.add('acertos')
+    scorediv.textContent = 'Você acertou ' + score + ' de ' + Quiz.length;
+    divFim.appendChild(scorediv);
+
+    let percentage = criaElementoFacilitador('h4','score','score');
+    percentage.textContent = Math.round(score/Quiz.length * 100) + '%';
+    divFim.appendChild(percentage);
+
+    Frame.append(divFim);
+
 }
