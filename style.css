@@ -26,13 +26,31 @@ p.pager 												{ margin:5px 0 5px; color:#999; text-align:right; }
 .qnumber 												{ font-size:25px; font-weight:bold; font-style:italic; vertical-align:bottom; }
 .number 												{ font-size:25px; font-weight:bold; font-style:normal; vertical-align:inherit; padding-right:10px; }
 .score 													{ width:100%; display:inline-block; margin:30px 0; font-size:100px; text-align:center; }
-img.question-image 										{ width:100%; height:auto; display:block; max-width:250px; margin:10px auto; border:1px solid #ccc; }
+.question-img{
+    width:50%;
+    height:auto;
+    display:block;
+    max-width:250px;
+    margin:10px auto;
+    border:1px solid #ccc;
+    margin-left: auto;
+    margin-right: auto;
+}
 #choice-block 											{ display:block; list-style:none; margin:0; padding:0; cursor: pointer; }
 /*	#submitbutton 											{ cursor:pointer; -webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px; } */
 /*	#submitbutton:hover 									{ background:#7b8da6; } */
 #explanation 											{ width:auto; min-height:100px; margin:0 auto; padding:20px 0; text-align:center; display: none;}
 #explanation span 										{ font-weight:bold; padding-right:8px; }
-.choice-box 											{ width:100%;  display:block;  text-align:center;  margin:5px auto !important; padding:10px 0 !important; border:1px solid #bdbdbd; }
+.choice-box{   
+    width:100%;
+    display:block;
+    text-align:center;
+    margin:5px auto !important;
+    padding:10px 0 !important;
+    border:1px solid #bdbdbd;
+    cursor: pointer; 
+}
+
 .correct 												{ color:#51a351; font-size: 20px; display: block; margin-bottom: 5px; border-bottom: 1px #51a351 solid; padding-bottom: 5px; }
 .incorrect 												{ color:#f93939; font-size: 20px; display: block; margin-bottom: 5px; border-bottom: 1px #f93939 solid; padding-bottom: 5px; }
 
@@ -44,6 +62,7 @@ img.question-image 										{ width:100%; height:auto; display:block; max-width
 
 .acertos{
     font-weight:normal;
+    font-size: xx-large;
     margin:20px 0;
     padding:0;
     font-style:italic;

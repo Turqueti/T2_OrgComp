@@ -1,0 +1,62 @@
+[
+	{
+		"question": "Questão: Sobre Pipeline, Dependencia de Dados são:",
+		"image": "https://blog.pantuza.com/uploads/e7f879d62220d0977a7254d90c3fe46f71440cc5",
+		"choices": [
+			"A próxima instrução não está no endereço subsequente ao da instrução anterior.",
+			"As instruções dependem de resultados de instruções anteriores, ainda não completadas.",
+			"Houve acessos simultâneos à memória feitos por 2 ou mais estágios.",
+			"O dado não está presente na memória."
+		],
+		"correct": "As instruções dependem de resultados de instruções anteriores, ainda não completadas.",
+		"explanation": ""
+	},
+	{
+		"question": "Questão: Sobre Memória Cache, quando a informação está em algum bloco superior, diz-se:",
+		"image": "https://formacaoajuda.files.wordpress.com/2019/12/cache1.jpg?w=1024",
+		"choices": [
+			"Acerto.",
+			"Falha.",
+			"Sucesso.",
+			"Êxito."
+		],
+		"correct": "Acerto.",
+		"explanation": ""
+	},
+	{
+		"question": "Questão: Quais das características nao pertence à instruções do tipo R?",
+		"image": "http://gec.di.uminho.pt/discip/TextoAC/Fig-12.2.gif",
+		"choices": [
+			"Leitura de dois registradores.",
+			"Realizaçao de operação aritmética/lógica.",
+			"Escrita do resultado no registrador.",
+			"Uso de valor imediato."
+		],
+		"correct": "Uso de valor imediato.",
+		"explanation": ""
+	},
+	{
+		"question": "Questão: Ao otimizar o código o compilador:",
+		"image": "",
+		"choices": [
+			"Elimina expressões comuns.",
+			"Elimina desvios desnecessários.",
+			"Elimina código redundante.",
+			"Todas as anteriories."
+		],
+		"correct": "Todas as anteriories.",
+		"explanation": ""
+	},
+	{
+		"question": "Questão: Marque a alternativa que não pertence aos estágios principais no Escalonamento dinâmico de instruções:",
+		"image": "",
+		"choices": [
+			"Busca e despacho das instruções.",
+			"Análise dos ciclos de instruções.",
+			"Várias unidades funcionais.",
+			"Unidade de commit."
+		],
+		"correct": "Análise dos ciclos de instruções.",
+		"explanation": ""
+	}
+]

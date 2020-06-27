@@ -1,0 +1,386 @@
+[
+	{
+		"question": "Sobre Memória Cache, o bloco:",
+		"image": "",
+		"choices": [
+			"Outra forma de chamar a cache",
+			"É a medida de velocidade da cache",
+			"Maior unidade da Cache",
+			"Menor unidade que pode estar presente ou ausente na hierarquia de dois níveis"
+		],
+		"correct": "Menor unidade que pode estar presente ou ausente na hierarquia de dois níveis",
+		"explanation": "Menor unidade que pode estar presente ou ausente na hierarquia de dois níveis"
+	},
+	{
+		"question": "Sobre Memória Cache, quando a informação está em algum bloco superior, diz-se",
+		"image": "",
+		"choices": [
+			"Acerto",
+			"Falha",
+			"Sucesso",
+			"Êxito"
+		],
+		"correct": "Acerto",
+		"explanation": "Acerto"
+	},
+	{
+		"question": "Sobre Pipeline, Dependencia de Dados são:",
+		"image": "",
+		"choices": [
+			"A próxima instrução não está no endereço subsequente ao da instrução anterior",
+			"As instruções dependem de resultados de instruções anteriores, ainda não completadas",
+			"Houve acessos simultâneos à memória feitos por 2 ou mais estágios.",
+			"O dado não está presente na memória"
+		],
+		"correct": "As instruções dependem de resultados de instruções anteriores, ainda não completadas",
+		"explanation": "As instruções dependem de resultados de instruções anteriores, ainda não completadas"
+	},
+	{
+		"question": "Sobre Pipeline, Dependência de Controle é:",
+		"image": "",
+		"choices": [
+			"A próxima instrução não está no endereço subsequente ao da instrução anterior",
+			"As instruções dependem de resultados de instruções anteriores, ainda não completadas",
+			"Houve acessos simultâneos à memória feitos por 2 ou mais estágios.",
+			"O dado não está presente na memória"
+		],
+		"correct": "A próxima instrução não está no endereço subsequente ao da instrução anterior",
+		"explanation": "A próxima instrução não está no endereço subsequente ao da instrução anterior"
+	},
+	{
+		"question": "Sobre Dependência de Dados, uma dependência verdadeira é:",
+		"image": "",
+		"choices": [
+			"Uma antidependência ou Write After Read",
+			"Uma instrução escreve em um operando que é também escrito por uma instrução sucessora.",
+			"Uma instrução utiliza um operando que é produzido por uma instrução anterior.",
+			"Uma instrução lê um operando que é escrito por uma instrução sucessora"
+		],
+		"correct": "Uma instrução utiliza um operando que é produzido por uma instrução anterior.",
+		"explanation": "Uma instrução utiliza um operando que é produzido por uma instrução anterior."
+	},
+	{
+		"question": "Diz-se Despacho Multiplo estático quando:",
+		"image": "",
+		"choices": [
+			"Maioria das decisões são tomadas pelo compilador",
+			"Maioria das decisões são tomadas em tempo de execução pelo hardware",
+			"Deve-se empacotar as instruções em slots de despacho",
+			"Deve-se lidar com as dependências de dados e de controle"
+		],
+		"correct": "Maioria das decisões são tomadas pelo compilador",
+		"explanation": "Maioria das decisões são tomadas pelo compilador"
+	},
+	{
+		"question": "Ao otimizar o código o compilador:",
+		"image": "",
+		"choices": [
+			"Elimina expressões comuns",
+			"Elimina desvios desnecessários",
+			"Elimina código redundante",
+			"Todas as alternativas"
+		],
+		"correct": "Todas as alternativas",
+		"explanation": "Todas as alternativas"
+	},
+	{
+		"question": "Sobre pascote de despacho não pode-se dizer:",
+		"image": "",
+		"choices": [
+			"Que é um conjunto de instruções despachadas juntas",
+			"Que é uma única grande instrução com várias operações - VLIW ",
+			"Que utiliza o hardware para acelerar a execução de múltiplas ações conjuntas",
+			"Que a arquitetura IA-64 utiliza essa técnica com um outro nome: EPIC"
+		],
+		"correct": "Que utiliza o hardware para acelerar a execução de múltiplas ações conjuntas",
+		"explanation": "Que utiliza o hardware para acelerar a execução de múltiplas ações conjuntas"
+	},
+	{
+		"question": "Na hierarquia de memória temos na base ou seja, em último lugar o/a:",
+		"image": "",
+		"choices": [
+			"Armazanemento fora da placa",
+			"Armazenamento Off-line",
+			"Memória da placa",
+			"Memória cache"
+		],
+		"correct": "Armazenamento Off-line",
+		"explanation": "Armazenamento Off-line"
+	},
+	{
+		"question": "Não é uma forma de acesso da memória",
+		"image": "",
+		"choices": [
+			"Sequencial",
+			"Direto",
+			"Aleatório",
+			"Dissociativa"
+		],
+		"correct": "Dissociativa",
+		"explanation": "Dissociativa"
+	},
+	{
+		"question": "Na arquitetura monociclo  do MIPS, quanto é incrementado no PC(contador de programa)?",
+		"image": "",
+		"choices": [
+			"2",
+			"4",
+			"6",
+			"8"
+		],
+		"correct": "4",
+		"explanation": "4"
+	},
+	{
+		"question": "Quais das características nao pertence à instruções do tipo R?",
+		"image": "",
+		"choices": [
+			"Leitura de dois registradores",
+			"Realizaçao de operação aritmética/lógica",
+			"Escrita do resultado no registrador",
+			"Uso de valor imediato"
+		],
+		"correct": "Uso de valor imediato",
+		"explanation": "Uso de valor imediato"
+	},
+	{
+		"question": "Qual dos campos não pertence à instrução do tipo R?",
+		"image": "",
+		"choices": [
+			"rs",
+			"rt",
+			"rd",
+			"Constante ou endereço"
+		],
+		"correct": "Constante ou endereço",
+		"explanation": "Constante ou endereço"
+	},
+	{
+		"question": "Qual dos campos não pertence à instrução do tipo I?",
+		"image": "",
+		"choices": [
+			"rs",
+			"rt",
+			"rd",
+			"Constante ou endereço"
+		],
+		"correct": "rd",
+		"explanation": "rd"
+	},
+	{
+		"question": "Qual dos campos pertence à instrução do tipo J?",
+		"image": "",
+		"choices": [
+			"rs",
+			"rt",
+			"rd",
+			"endereço"
+		],
+		"correct": "endereço",
+		"explanation": "endereço"
+	},
+	{
+		"question": "O desempenho do processador na versão monociclo é limitado pelo caminho mais longo de execução. Qual instrução que possui o caminho mais longo?",
+		"image": "",
+		"choices": [
+			"lw",
+			"add",
+			"j",
+			"sw"
+		],
+		"correct": "lw",
+		"explanation": "lw"
+	},
+	{
+		"question": "Para instrução de beq, qual dos paramêtros deve ser passado como valor 1 na unidade de controle?",
+		"image": "",
+		"choices": [
+			"RegDst",
+			"ALUSrc",
+			"Branch",
+			"Mem to-Reg"
+		],
+		"correct": "Branch",
+		"explanation": "Branch"
+	},
+	{
+		"question": "Qual das alternativas não pertence à Conflitos estruturais no pipeline?",
+		"image": "",
+		"choices": [
+			"Acessos concorrentes à memória",
+			"Leitura de instrução e leitura/escrita de dados simultâneos à memória",
+			"Acesso simultâneo ao banco de registradores ou uso simultâneo de uma mesma unidade funcional",
+			"Execução da próxima instrução necessita do resultado de outra instrução que está no pipeline"
+		],
+		"correct": "Execução da próxima instrução necessita do resultado de outra instrução que está no pipeline",
+		"explanation": "Execução da próxima instrução necessita do resultado de outra instrução que está no pipeline"
+	},
+	{
+		"question": "Qual das características não pertence ao pipeline?",
+		"image": "",
+		"choices": [
+			"Diminuir tempo de execução de cada tarefa",
+			"A taxa de pipeline é limitado pelo estágio mais lento",
+			"Pipeline trava se houver dependências",
+			"Um speedup potencial é o número de estágios do pipeline"
+		],
+		"correct": "Diminuir tempo de execução de cada tarefa",
+		"explanation": "Diminuir tempo de execução de cada tarefa"
+	},
+	{
+		"question": "Quantos registradores precisam ser inseridos na arquitetura monociclo do MIPS para transformar em pipeline?",
+		"image": "",
+		"choices": [
+			"2",
+			"3",
+			"4",
+			"5"
+		],
+		"correct": "4",
+		"explanation": "4"
+	},
+	{
+		"question": "No pipeline, qual é o registrador que fica entre ALU(ULA) e o DM)data memory)?",
+		"image": "",
+		"choices": [
+			"1º",
+			"2º",
+			"3º",
+			"4º"
+		],
+		"correct": "3º",
+		"explanation": "3º"
+	},
+	{
+		"question": "Qual das dependências ou conflitos não pertence ao pipeline?",
+		"image": "",
+		"choices": [
+			"Conflitos estruturais",
+			"Conflitos operacionais",
+			"Dependência de dados",
+			"Dependência de controle"
+		],
+		"correct": "Conflitos operacionais",
+		"explanation": "Conflitos operacionais"
+	},
+	{
+		"question": "Dado os estágios do pipeline I(IF), II(ID), III(EX), IV(MEM), V(WB), qual(is) acessa/ão o banco de registradores?",
+		"image": "",
+		"choices": [
+			"I e III",
+			"II e IV",
+			"I e V",
+			"II e V"
+		],
+		"correct": "II e V",
+		"explanation": "II e V"
+	},
+	{
+		"question": "Quais das instruções abaixo possui dependência direta? ",
+		"image": "",
+		"choices": [
+			"add R1, R2, R3, sub R5, R1, R4",
+			"sub R5, R1, R4, add R1, R2, R3 (antidependência)",
+			"add R5, R2, R3, sub R5, R1, R4 (dependência de saída)",
+			"Nenhuma das instruções acima"
+		],
+		"correct": "add R1, R2, R3, sub R5, R1, R4",
+		"explanation": "add R1, R2, R3, sub R5, R1, R4"
+	},
+	{
+		"question": "Quais das características não pertence à predição estática na dependência de controle?",
+		"image": "",
+		"choices": [
+			"O compilador faz uma previsão se o desvio vai ser tomado ou não",
+			"Alta taxa de acertos",
+			"Geração de “bolhas” quando a previsão é errada",
+			"Não permite adaptações com relação ao comportamento do programa"
+		],
+		"correct": "Alta taxa de acertos",
+		"explanation": "Alta taxa de acertos"
+	},
+	{
+		"question": "Qual das soluções abaixo não pertence à dependência de dados verdadeira no pipeline?",
+		"image": "",
+		"choices": [
+			"O pipeline para durante certo número de ciclos(interlock)",
+			"Inserção de instruções de nop(no operation) ou escalonamento adequado das instruções pelo compilador",
+			"Adiantamento dos dados (bypassing ou forwarding)",
+			"Renomeação dos registradores utilizados"
+		],
+		"correct": "Renomeação dos registradores utilizados",
+		"explanation": "Renomeação dos registradores utilizados"
+	},
+	{
+		"question": "A dependência de controle no pipeline pode ocorrer em instruções como por exemplo:",
+		"image": "",
+		"choices": [
+			"Add e Sub",
+			"Branch e Jump",
+			"Load-Store e Load-Write",
+			"And e Move"
+		],
+		"correct": "Branch e Jump",
+		"explanation": "Branch e Jump"
+	},
+	{
+		"question": "O que é despacho no  pipeline avançado?",
+		"image": "",
+		"choices": [
+			"Número de instruções disparados ao mesmo tempo",
+			"Número de registradores utilizados ao mesmo tempo",
+			"Tempo que cada instrução demora ao executar",
+			"Escolha do modo que cada registrador será utilizado"
+		],
+		"correct": "Número de instruções disparados ao mesmo tempo",
+		"explanation": "Número de instruções disparados ao mesmo tempo"
+	},
+	{
+		"question": "Marque a alternativa que não pertence aos estágios principais no Escalonamento dinâmico de instruções",
+		"image": "",
+		"choices": [
+			"Busca e despacho das instruções",
+			"Análise dos ciclos de instruções",
+			"Várias unidades funcionais",
+			"Unidade de commit"
+		],
+		"correct": "Análise dos ciclos de instruções",
+		"explanation": "Análise dos ciclos de instruções"
+	},
+	{
+		"question": "Qual das características não conflita com as outras ao se falar de Memória?",
+		"image": "",
+		"choices": [
+			"Grande capacidade",
+			"Rádio acesso",
+			"Baixo custo",
+			"Todas as alternativas estão corretas"
+		],
+		"correct": "Todas as alternativas estão corretas",
+		"explanation": "Todas as alternativas estão corretas"
+	},
+	{
+		"question": "Dentre os tipos de memórias abaixo, qual possui o menor tempo de acesso?",
+		"image": "",
+		"choices": [
+			"Memória RAM",
+			"Registrador",
+			"Memória Flash",
+			"Memória Cache"
+		],
+		"correct": "Registrador",
+		"explanation": "Registrador"
+	},
+	{
+		"question": "Dentre os tipos de memórias abaixo, qual possui o maior tempo de acesso?",
+		"image": "",
+		"choices": [
+			"Memória RAM",
+			"Disco rígido",
+			"Memória Flash",
+			"Memória Cache"
+		],
+		"correct": "Disco rígido",
+		"explanation": "Disco rígido"
+	}
+]
